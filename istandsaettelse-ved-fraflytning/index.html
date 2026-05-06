@@ -3,11 +3,458 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="Komplet istandsættelse ved fraflytning med depositumsgaranti. Professionelt malerarbejde, gulvafslibning og slutrengøring i København og på Sjælland.">
+    <title>Istandsættelse ved fraflytning | Vi garanterer dit depositum | Homie</title>
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .ivf-section { padding: 64px 0; }
+        .ivf-section-alt { background: var(--bg); padding: 64px 0; }
+        .ivf-intro { max-width: 760px; color: var(--text); font-size: 0.95rem; line-height: 1.8; margin-bottom: 28px; }
+        .ivf-price-list { list-style: none; padding: 0; margin: 20px 0; display: flex; flex-direction: column; gap: 14px; }
+        .ivf-price-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 0.92rem; color: var(--text); line-height: 1.7; }
+        .ivf-price-list li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 8px; }
+        .ivf-price-list li strong { color: var(--navy); }
+        .ivf-ordning-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 28px; }
+        .ivf-ordning-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+        .ivf-ordning-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+        .ivf-ordning-card p { font-size: 0.88rem; color: var(--text); line-height: 1.75; margin-bottom: 10px; }
+        .ivf-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 32px; }
+        .ivf-service-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; }
+        .ivf-service-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+        .ivf-service-card p { font-size: 0.87rem; color: var(--text); line-height: 1.75; margin-bottom: 10px; }
+        .ivf-guarantee { background: var(--blue); border-radius: var(--radius-lg); padding: 48px; color: #fff; margin-top: 0; }
+        .ivf-guarantee h2 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 18px; }
+        .ivf-guarantee p { font-size: 0.93rem; line-height: 1.8; color: rgba(255,255,255,0.9); margin-bottom: 14px; }
+        .ivf-areas-list { columns: 2; gap: 16px; list-style: none; padding: 0; margin: 20px 0; }
+        .ivf-areas-list li { font-size: 0.9rem; color: var(--text); padding: 6px 0; display: flex; gap: 8px; break-inside: avoid; }
+        .ivf-areas-list li::before { content: '›'; color: var(--blue); font-weight: 700; }
+        .ivf-faq { display: flex; flex-direction: column; gap: 0; }
+        .ivf-faq-item { border-bottom: 1px solid var(--border); padding: 22px 0; }
+        .ivf-faq-item h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+        .ivf-faq-item p { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 8px; }
+        .ivf-cta { background: var(--navy); padding: 64px 0; text-align: center; }
+        .ivf-cta h2 { font-size: 2rem; font-weight: 800; color: #fff; margin-bottom: 14px; }
+        .ivf-cta p { font-size: 0.97rem; color: #7A9EB5; max-width: 560px; margin: 0 auto 28px; line-height: 1.7; }
+        .ivf-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 900px) {
+            .ivf-ordning-grid { grid-template-columns: 1fr; }
+            .ivf-services-grid { grid-template-columns: 1fr; }
+            .ivf-areas-list { columns: 1; }
+            .ivf-guarantee { padding: 32px 24px; }
+        }
+    </style>
 </head>
-<body data-page="istandsaettelse-ved-fraflytning" data-root="../">
-    <script src="../page-data.js"></script>
-    <script src="../page-template.js"></script>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="../index.html" class="logo">
+            <img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp"
+                 alt="Homie Håndværkerservice"
+                 onerror="this.style.display='none';document.getElementById('logo-text').style.display='flex'">
+            <span id="logo-text" class="logo-fallback" style="display:none">
+                <span class="logo-fallback-main">homie</span>
+                <span class="logo-fallback-sub">EN AF HUSET</span>
+            </span>
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <a href="../index.html" class="nav-link">Forside</a>
+            <div class="nav-item has-dropdown">
+                <a href="../istandsaettelse-ved-fraflytning/" class="nav-link active">
+                    Ydelser
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="../istandsaettelse-ved-fraflytning/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Istandsættelse ved fraflytning</strong><span>Få dit depositum tilbage</span></div>
+                    </a>
+                    <a href="../malerservice/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.5 3.5 21 6l-9.5 9.5-4 1 1-4L18.5 3.5z"/><path d="M5 20c2.5 0 4-1.5 4-4"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Malerservice</strong><span>Professionelle malere på Sjælland</span></div>
+                    </a>
+                    <a href="../gulvservice/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M7 7v10"/><path d="M14 7v10"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Gulvservice</strong><span>Slibning og lakering</span></div>
+                    </a>
+                    <a href="../renovering-erhverv/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17"/><path d="M9 8h1"/><path d="M14 8h1"/><path d="M9 12h1"/><path d="M14 12h1"/><path d="M9 21v-5h6v5"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Renovering Erhverv</strong><span>Til virksomheder og boligselskaber</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="../om-os/" class="nav-link">
+                    Om os
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="../om-os/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Om Homie</strong><span>Vores historie og team</span></div>
+                    </a>
+                </div>
+            </div>
+            <a href="../kontakt/" class="nav-link">Kontakt</a>
+        </nav>
+        <div class="header-right">
+            <div class="lang-toggle">
+                <button class="lang-flag" title="English" aria-label="English"><img src="../assets/en-flag.png" alt=""><span>EN</span></button>
+                <button class="lang-flag active" title="Dansk" aria-label="Dansk"><img src="../assets/dk-flag.png" alt=""><span>DA</span></button>
+            </div>
+            <a href="tel:+4570404257" class="nav-phone-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                70 40 42 57
+            </a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html">Forside</a>
+        <a href="../istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+        <a href="../malerservice/">Malerservice</a>
+        <a href="../gulvservice/">Gulvservice</a>
+        <a href="../renovering-erhverv/">Renovering Erhverv</a>
+        <a href="../om-os/">Om os</a>
+        <a href="../kontakt/">Kontakt</a>
+        <div class="mobile-cta">
+            <a href="tel:+4570404257" class="btn btn-primary" style="width:100%;justify-content:center;">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+                70 40 42 57
+            </a>
+        </div>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <img class="hero-video" src="../assets/XR6_1916-1-1-811x1024-1.webp" alt="Istandsættelse ved fraflytning">
+    <div class="hero-overlay"></div>
+    <div class="hero-body">
+        <div class="hero-text">
+            <h1 style="text-transform:none; font-size:4rem; line-height:1.1;">Istandsættelse<br>ved fraflytning</h1>
+            <p class="hero-text-body">Skal du flytte, og vil du være sikker på at få dit depositum tilbage?</p>
+            <p class="hero-text-body">Hos Homie tager vi os af alt fra professionelt malerarbejde og gulvafslibning til komplet slutrengøring. Vi deltager i dit fraflytningssyn og sikrer, at boligen bliver godkendt af udlejer.</p>
+            <p class="hero-text-body">Med vores unikke depositumsgaranti kan du fokusere på dit nye hjem, mens vi håndterer hele istandsættelsen og dialogen med udlejer.</p>
+            <div class="hero-btns">
+                <a href="tel:+4570404257" class="hero-btn-phone">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                    70 40 42 57
+                </a>
+                <a href="../kontakt/" class="hero-btn-contact">Kontakt os</a>
+            </div>
+        </div>
+        <div class="hero-form-card">
+            <h3>Få et uforpligtende tilbud</h3>
+            <div class="SimplyWebForm">
+                <form id="SimplyWebForm" name="Hjemmesideformular" action="https://homiehandvaerkerservice80.simply-crm.dk/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                    <input type="hidden" name="publicid" value="bb26e8ff3252b680d4f4c244fe4d9bf6">
+                    <input type="hidden" name="urlencodeenable" value="1">
+                    <input type="hidden" name="name" value="Hjemmesideformular">
+                    <input type="hidden" name="potentialname" value="Nyt lead" required>
+                    <input type="hidden" name="closingdate" value="2025-06-25" required>
+                    <select name="sales_stage" data-label="sales_stage" required hidden>
+                        <option value="">Vælg værdi</option>
+                        <option value="Booking" selected>Booking</option>
+                        <option value="Gennemgang">Gennemgang</option>
+                        <option value="Online gennemgang">Online gennemgang</option>
+                        <option value="Tilbud sendt/Opfølgning">Tilbud sendt/Opfølgning</option>
+                        <option value="Accepteret tilbud">Accepteret tilbud</option>
+                        <option value="Planlagt opgave">Planlagt opgave</option>
+                        <option value="Syn gennemført">Syn gennemført</option>
+                        <option value="Fakturering gennemført">Fakturering gennemført</option>
+                    </select>
+                    <table>
+                        <tr><td><label for="cf_fulde_navn_ivf">Fulde navn</label><input type="text" id="cf_fulde_navn_ivf" name="cf_fulde_navn" placeholder="Dit fulde navn"></td></tr>
+                        <tr><td><label for="cf_telefonnummer_ivf">Telefonnummer</label><input type="text" id="cf_telefonnummer_ivf" name="cf_telefonnummer" placeholder="Dit telefonnummer"></td></tr>
+                        <tr><td><label for="cf_email_ivf">E-mail</label><input type="email" id="cf_email_ivf" name="cf_email" placeholder="Din e-mailadresse"></td></tr>
+                        <tr><td><label for="cf_fraflytningsdato_ivf">Fraflytningsdato, såfremt relevant</label><input type="date" id="cf_fraflytningsdato_ivf" name="cf_fraflytningsdato"></td></tr>
+                        <tr><td><label for="cf_adresse_ivf">Adresse (inkl. etage, hvis relevant)</label><input type="text" id="cf_adresse_ivf" name="cf_adresse" placeholder="Gade, husnummer og etage"></td></tr>
+                        <tr><td><label for="cf_postnummer_ivf">Postnummer</label><input type="number" id="cf_postnummer_ivf" name="cf_postnummer" placeholder="Postnummer"></td></tr>
+                        <tr><td><label for="description_ivf">Skriv din besked</label><textarea id="description_ivf" name="description" placeholder="Beskriv kort hvad der skal laves…"></textarea></td></tr>
+                        <tr><td><select name="leadsource" data-label="leadsource" hidden><option value="">Vælg værdi</option><option value="Web Site" selected>Hjemmeside</option></select></td></tr>
+                        <tr><td><input type="submit" value="Send forespørgsel"></td></tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- STATS BAR -->
+    <div class="hero-stats">
+        <div class="hero-stats-inner">
+            <div class="hero-stat">
+                <div class="hero-stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+                </div>
+                <div>
+                    <div class="hero-stat-num">2500+</div>
+                    <div class="hero-stat-label">Istandsættelser gennemført</div>
+                </div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                    <div class="hero-stat-num">Garanti</div>
+                    <div class="hero-stat-label">På vores arbejde</div>
+                </div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                    <div class="hero-stat-num">Biståelse</div>
+                    <div class="hero-stat-label">Fraflytningssynet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="ivf-section">
+    <div class="container content-layout">
+        <article class="content-main">
+
+<section class="copy-section">
+                <h2>Hvad koster istandsættelse ved fraflytning?</h2>
+                <p>Prisen på en komplet istandsættelse ved fraflytning varierer naturligvis alt efter lejemålets størrelse og den aftalte stand i din lejekontrakt.</p>
+                <p>Hos Homie arbejder vi med gennemsigtige priser, så du kender dine omkostninger, før vi går i gang.</p>
+                <ul class="ivf-price-list">
+                    <li><span><strong>Lejemålets størrelse (m²):</strong> Antallet af kvadratmeter definerer mængden af maling og tidsforbruget på både rengøring og eventuel gulvbehandling.</span></li>
+                    <li><span><strong>Væggenes og lofternes stand:</strong> Skal der blot én gang maling til en normalistandsættelse, eller kræver væggene spartling og flere lag for at dække huller og misfarvninger?</span></li>
+                    <li><span><strong>Valg af pakke:</strong> Har du brug for den fulde pakke med både malerarbejde, gulvafslibning og slutrengøring, eller skal vi kun håndtere specifikke dele af opgaven?</span></li>
+                    <li><span><strong>Krav i lejekontrakten:</strong> Er der krav om nyistandsættelse (hvor alt skal fremstå som nyt), eller er det en normalistandsættelse, der dækker nødvendig maling og rengøring?</span></li>
+                </ul>
+                <p>Vi tilbyder altid en gratis besigtigelse af din bolig, hvorefter du modtager et fast, skriftligt tilbud.</p>
+            </section>
+
+            <section class="copy-section">
+                <h2>Normalistandsættelse vs. Nyistandsættelse: Hvad siger Lejeloven?</h2>
+                <p>For at forstå dine forpligtelser ved fraflytning, er det afgørende at kende forskellen på normalistandsættelse og nyistandsættelse.</p>
+                <p>Efter lejelovsændringen i 2015 kan udlejere ikke længere kræve, at et lejemål afleveres i bedre stand, end det var ved indflytning. Det betyder, at begrebet "nyistandsættelse" (hvor alt skal fremstå som spritnyt) er blevet erstattet af "normalistandsættelse" i de fleste nyere kontrakter.</p>
+
+                <div class="ivf-ordning-grid">
+                    <div class="ivf-ordning-card">
+                        <h3>A-ordningen: Lejerens ansvar</h3>
+                        <p>I lejemål med en A-ordning er det lejeren, der står for den indvendige vedligeholdelse i lejeperioden.</p>
+                        <p>Ved fraflytning indebærer dette typisk en normalistandsættelse, som dækker over nødvendig maling af vægge, lofter og træværk samt tapetsering og gulvbehandling.</p>
+                        <p>Her er målet at udbedre det slid, der er opstået, så boligen er klar til en ny lejer.</p>
+                    </div>
+                    <div class="ivf-ordning-card">
+                        <h3>B-ordningen: Udlejerens vedligeholdelseskonto</h3>
+                        <p>Ved en B-ordning er det udlejeren, der løbende vedligeholder boligen via en vedligeholdelseskonto, som lejeren indbetaler til over huslejen.</p>
+                        <p>Her skal lejeren ved fraflytning som udgangspunkt kun aflevere boligen i rengjort stand og udbedre eventuelle skader, der falder uden for almindeligt slid og ælde.</p>
+                        <p>Hos Homie gennemgår vi din lejekontrakt sammen med dig, så vi præcist ved, hvilken ordning du er underlagt. Vi sikrer, at istandsættelsen lever op til kravene for normalistandsættelse, så du ikke ender med at betale for mere, end loven foreskriver.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="copy-section">
+                <h2>Alt-i-én løsning: Vores 3 kerneydelser</h2>
+                <p>Vi har samlet de vigtigste ydelser under ét tag, så du kun behøver at kommunikere med én samarbejdspartner. Det sikrer en koordineret proces, hvor maleren, gulvmanden og rengøringsholdet arbejder fejlfrit sammen.</p>
+                <div class="ivf-services-grid">
+                    <div class="ivf-service-card">
+                        <h3>Professionelt malerarbejde</h3>
+                        <p>Vores malere sørger for en komplet hvidtning af vægge, lofter og træværk (fodpaneler, dørkarme og vinduesrammer).</p>
+                        <p>Vi bruger udelukkende svanemærkede kvalitetsprodukter, der sikrer en ensartet dækning og en finish, som udlejere og boligforeninger kan godkende uden anmærkninger.</p>
+                        <p>Vi udbedrer naturligvis også huller efter billeder og mindre revner i overfladen.</p>
+                    </div>
+                    <div class="ivf-service-card">
+                        <h3>Professionel gulvservice</h3>
+                        <p>Smukke gulve er ofte nøglen til et godkendt flyttesyn. Vi tilbyder professionel gulvafslibning efterfulgt af den korrekte efterbehandling – hvad enten din kontrakt kræver lakering, oliering eller ludbehandling.</p>
+                        <p>Vi sørger for, at ridser og misfarvninger forsvinder, så gulvene fremstår præsentable og modstandsdygtige.</p>
+                    </div>
+                    <div class="ivf-service-card">
+                        <h3>Grundig slutrengøring</h3>
+                        <p>En "flytterengøring" er langt mere omfattende end en almindelig ugentlig rengøring. Vi foretager en komplet dybderengøring af hele boligen, hvilket inkluderer afkalkning af badeværelse, rensning af emhætte-filtre, indvendig rengøring af hvidevarer samt aftørring af alle flader, skabe og skuffer.</p>
+                        <p>Vi efterlader boligen i en stand, hvor den næste lejer kan flytte direkte ind.</p>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+
+        <aside class="content-sidebar">
+            <h3>Ydelser</h3>
+            <a href="../istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+            <a href="../malerservice/">Malerservice</a>
+            <a href="../gulvservice/">Gulvservice</a>
+            <a href="../renovering-erhverv/">Renovering Erhverv</a>
+            <a href="../faq/">FAQ</a>
+        </aside>
+    </div>
+</section>
+
+<!-- GUARANTEE SECTION -->
+<section class="ivf-section-alt">
+    <div class="container">
+        <div class="ivf-guarantee">
+            <h2>Fuld depositumsgaranti</h2>
+            <p>Det, der for alvor adskiller Homie fra et almindeligt håndværkerfirma, er vores unikke depositumsgaranti. Vi ved, at dialogen med udlejer eller et boligselskab kan være stressende, og at kravene ved et flyttesyn ofte kan virke uoverskuelige. Derfor fjerner vi risikoen fra dine skuldre og lægger den over på vores.</p>
+            <p><strong style="color:#fff;">Hvad betyder vores garanti i praksis?</strong> Når du modtager et tilbud fra os, garanterer vi, at det udførte arbejde bliver godkendt af din udlejer. Hvis der mod forventning skulle opstå indsigelser eller krav om udbedringer af det arbejde, vi har stået for, så træder vi til uden ekstra omkostninger for dig.</p>
+            <p>Vi tager dialogen direkte med udlejeren, deltager i forhandlingerne og udfører eventuelle rettelser med det samme. Vores ansvar stopper ikke ved penselstrøget.</p>
+            <p>Vi dækker alle omkostninger forbundet med udbedring af de opgaver, der er inkluderet i dit skriftlige tilbud. Skulle en sag ende i en juridisk tvist med udlejer, følger vi opgaven til dørs – i ekstreme tilfælde dækker vi også omkostninger til en eventuel retssag, såfremt det vedrører vores ydelser.</p>
+            <p>Med Homie som partner er du ikke alene i kampen for dit depositum; vi er din professionelle repræsentant fra start til slut.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICE AREA SECTION -->
+<section class="ivf-section">
+    <div class="container content-layout">
+        <article class="content-main">
+            <section class="copy-section">
+                <h2>Her tilbyder vi istandsættelse ved fraflytning</h2>
+                <p>Vi har et indgående kendskab til kravene hos de største boligselskaber og private udlejere i og omkring hovedstaden. Vores lokale teams sikrer, at vi hurtigt kan besigtige din bolig og påbegynde arbejdet, så det passer med din tidsplan.</p>
+                <p>Vi dækker hele Storkøbenhavn og omegn, herunder:</p>
+                <ul class="ivf-areas-list">
+                    <li>København K, V, N og S (Indre By, Vesterbro, Nørrebro og Amager)</li>
+                    <li>Østerbro og Hellerup</li>
+                    <li>Frederiksberg</li>
+                    <li>Valby og Sydhavnen</li>
+                    <li>Vanløse og Brønshøj</li>
+                    <li>Storkøbenhavn: Rødovre, Hvidovre, Glostrup, Herlev og Ballerup</li>
+                    <li>Nordsjælland: Lyngby, Gentofte, Gladsaxe og omegn</li>
+                </ul>
+                <p>Uanset om du bor i en klassisk herskabslejlighed på Østerbro eller et moderne nybyggeri i Ørestad, kender vi de specifikke krav til istandsættelse og materialevalg, der gør sig gældende i dit lokalområde.</p>
+            </section>
+
+            <section class="copy-section">
+                <h2>Ofte stillede spørgsmål om istandsættelse ved fraflytning</h2>
+                <div class="ivf-faq">
+                    <div class="ivf-faq-item">
+                        <h3>Hvor lang tid tager en istandsættelse?</h3>
+                        <p>Tidsforbruget afhænger af lejemålets størrelse og de opgaver, der skal udføres (f.eks. om der både skal males og slibes gulve). Typisk tager en komplet istandsættelse af en 2- eller 3-værelses lejlighed mellem 3 og 5 arbejdsdage.</p>
+                        <p>Vi koordinerer alle håndværkere, så processen forløber så hurtigt og effektivt som muligt, så du kan overholde din deadline for aflevering.</p>
+                    </div>
+                    <div class="ivf-faq-item">
+                        <h3>Hvad hvis udlejer ikke godkender arbejdet?</h3>
+                        <p>Når du vælger Homie, er dette vores ansvar. Skulle udlejer mod forventning have indsigelser mod det arbejde, vi har udført, træder vores depositumsgaranti i kraft.</p>
+                        <p>Vi tager dialogen med udlejer og sørger for at udbedre eventuelle mangler uden ekstra beregning for dig. Vi forlader ikke opgaven, før arbejdet er godkendt.</p>
+                    </div>
+                    <div class="ivf-faq-item">
+                        <h3>Skal jeg selv være til stede ved flyttesynet?</h3>
+                        <p>Nej, det behøver du ikke. Faktisk foretrækker mange af vores kunder, at vi repræsenterer dem ved flyttesynet.</p>
+                        <p>Vi har stor erfaring med dialogen med professionelle administratorer og udlejere, og vi ved præcis, hvad der er rimeligt i forhold til lejeloven. Hvis du ønsker det, deltager vi som din professionelle part og sikrer, at alt foregår efter bogen.</p>
+                    </div>
+                    <div class="ivf-faq-item">
+                        <h3>Hvad siger lejeloven om istandsættelse?</h3>
+                        <p>Siden lejelovsændringen i 2015 kan en udlejer kun kræve en såkaldt normalistandsættelse. Det betyder, at du som lejer kun skal betale for nødvendig maling af vægge, lofter og træværk samt gulvbehandling, hvis det er aftalt.</p>
+                        <p>Udlejer kan ikke længere kræve, at lejemålet afleveres i bedre stand, end det var ved din indflytning. Vi rådgiver dig altid ud fra den gældende lovgivning, så du ikke betaler for mere, end du er forpligtet til.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <aside class="content-sidebar">
+            <h3>Ydelser</h3>
+            <a href="../istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+            <a href="../malerservice/">Malerservice</a>
+            <a href="../gulvservice/">Gulvservice</a>
+            <a href="../renovering-erhverv/">Renovering Erhverv</a>
+            <a href="../faq/">FAQ</a>
+        </aside>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="ivf-cta">
+    <div class="container">
+        <h2>Klar til at gøre fraflytningen nem?</h2>
+        <p>Slip bekymringerne og lad os tage os af din istandsættelse ved fraflytning. Vi sikrer, at alt bliver godkendt, og vi står for alt i tilbuddet, også eventuelle tvister.</p>
+        <p style="color:#7A9EB5;font-size:0.92rem;margin-bottom:28px;">Kontakt os i dag og få et uforpligtende tilbud.</p>
+        <div class="ivf-cta-btns">
+            <a href="tel:+4570404257" class="btn btn-primary btn-lg">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+                70 40 42 57
+            </a>
+            <a href="../kontakt/" class="btn btn-white btn-lg">Kontakt os</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo-text">homie</div>
+                <div class="footer-logo-sub">EN VEN AF HUSET</div>
+                <p class="footer-cvr">CVR: 41208546</p>
+                <a href="../privatlivspolitik/" class="footer-privacy">&#9998; Privatlivspolitik</a>
+            </div>
+            <div class="footer-col">
+                <h4>Kontaktinfo</h4>
+                <div class="footer-contact-items">
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
+                        <a href="mailto:kontakt@homie.nu">kontakt@homie.nu</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg></span>
+                        <a href="tel:+4570404257">70 40 42 57</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                        <span>Tuborg Parkvej 3, st. tv. 2900 Hellerup</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Ydelser</h4>
+                <div class="footer-links">
+                    <a href="../malerservice/">Malerservice</a>
+                    <a href="../gulvservice/">Gulvservice</a>
+                    <a href="../istandsaettelse-ved-fraflytning/">Istandsættelse</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Generelt</h4>
+                <div class="footer-links">
+                    <a href="../om-os/">Om os</a>
+                    <a href="../kontakt/">Kontakt</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <span class="footer-social-label">FØLG OS</span>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/hhs-aps/" target="_blank" rel="noopener" class="social-link" title="LinkedIn" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/homiehaandvaerkerservice" target="_blank" rel="noopener" class="social-link" title="Facebook" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/homie_aps/" target="_blank" rel="noopener" class="social-link" title="Instagram" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-recaptcha">
+                This site is protected by reCAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply.
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+}
+document.querySelectorAll('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+    });
+});
+</script>
 </body>
 </html>

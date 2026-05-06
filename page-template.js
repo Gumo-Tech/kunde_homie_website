@@ -162,6 +162,7 @@
         <div>© 2024 Homie Håndværkerservice ApS &nbsp;·&nbsp; CVR: 41208546</div>
         <div class="footer-bottom-links">
           <a href="${root}${page.lang === "en" ? "en/contact/" : "kontakt/"}">${page.lang === "en" ? "Contact" : "Kontakt"}</a>
+          <a href="${root}privatlivspolitik/">${page.lang === "en" ? "Privacy Policy" : "Privatlivspolitik"}</a>
           <a href="${root}sitemap.xml">Sitemap</a>
         </div>
       </div>
