@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakt Homie Håndværkerservice - ring, skriv eller udfyld formularen for et gratis, uforpligtende tilbud på istandsættelse og renovering.">
+    <title>Kontakt os - Homie Håndværkerservice</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="../index.html" class="logo">
+            <img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp" alt="Homie Håndværkerservice">
+        </a>
+
+        <nav class="main-nav">
+            <a href="../index.html" class="nav-link">Forside</a>
+            <div class="nav-item has-dropdown">
+                <a href="../istandsaettelse-ved-fraflytning/" class="nav-link">
+                    Ydelser
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="../istandsaettelse-ved-fraflytning/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Istandsættelse ved fraflytning</strong><span>Få dit depositum tilbage</span></div>
+                    </a>
+                    <a href="../malerservice/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.5 3.5 21 6l-9.5 9.5-4 1 1-4L18.5 3.5z"/><path d="M5 20c2.5 0 4-1.5 4-4"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Malerservice</strong><span>Professionelle malere på Sjælland</span></div>
+                    </a>
+                    <a href="../gulvservice/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M7 7v10"/><path d="M14 7v10"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Gulvservice</strong><span>Slibning og lakering</span></div>
+                    </a>
+                    <a href="../renovering-erhverv/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17"/><path d="M9 8h1"/><path d="M14 8h1"/><path d="M9 12h1"/><path d="M14 12h1"/><path d="M9 21v-5h6v5"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Renovering Erhverv</strong><span>Til virksomheder og boligselskaber</span></div>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="../om-os/" class="nav-link">
+                    Om os
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="dropdown">
+                    <a href="../om-os/" class="dropdown-link">
+                        <div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg></div>
+                        <div class="dropdown-link-text"><strong>Om Homie</strong><span>Vores historie og team</span></div>
+                    </a>
+                </div>
+            </div>
+            <a href="./" class="nav-link active">Kontakt</a>
+        </nav>
+
+        <div class="header-right">
+            <div class="lang-toggle">
+                <a class="lang-flag" href="../en/contact/" aria-label="English"><img src="../assets/en-flag.png" alt=""><span>EN</span></a>
+                <a class="lang-flag active" href="./" aria-label="Dansk"><img src="../assets/dk-flag.png" alt=""><span>DA</span></a>
+            </div>
+            <a href="tel:+4570404256" class="nav-phone-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+                70 40 42 56
+            </a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="../index.html">Forside</a>
+        <a href="../istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+        <a href="../malerservice/">Malerservice</a>
+        <a href="../gulvservice/">Gulvservice</a>
+        <a href="../renovering-erhverv/">Renovering Erhverv</a>
+        <a href="../om-os/">Om os</a>
+        <a href="./">Kontakt</a>
+    </nav>
+</header>
+
+<main>
+    <section class="contact-landing-hero">
+        <div class="contact-landing-overlay"></div>
+        <div class="container contact-landing-inner">
+            <div class="contact-landing-copy">
+                <h1>Kontakt os</h1>
+                <p>Vil du gerne i kontakt med os? Anvend formularen eller giv os et kald.</p>
+                <p>Vi er altid klar på telefonen og mailbakken.</p>
+                <div class="contact-landing-actions">
+                    <a href="tel:+4570404256" class="btn btn-primary btn-lg">
+                        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>
+                        70 40 42 56
+                    </a>
+                    <a href="#kontaktformular" class="btn btn-white btn-lg">
+                        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                        Kontakt os
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-landing-stats">
+                <div class="contact-landing-stat">
+                    <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-8 8l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 8-8l-3.8 3.8z"/></svg>
+                    <strong>2500+</strong>
+                    <span>Istandsættelser</span>
+                </div>
+                <div class="contact-landing-stat">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="m22 4-10 10-3-3"/></svg>
+                    <strong>Garanti</strong>
+                    <span>På vores arbejde</span>
+                </div>
+                <div class="contact-landing-stat">
+                    <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg>
+                    <strong>Biståelse</strong>
+                    <span>Fraflytningssynet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section contact-landing-section" id="kontaktformular">
+        <div class="container contact-landing-grid">
+            <aside class="contact-landing-info">
+                <h2>Telefontider</h2>
+                <p>Man-Tor: 09:00-15:00<br>Fre: 09:00-14:00</p>
+                <div class="contact-landing-info-list">
+                    <a href="tel:+4570404256">70 40 42 56</a>
+                    <a href="mailto:kontakt@homie.nu">kontakt@homie.nu</a>
+                    <span>Tuborg Parkvej 3, st. tv.<br>2900 Hellerup</span>
+                </div>
+            </aside>
+
+            <div class="contact-form-card contact-landing-form">
+                <h3>Få et uforpligtende tilbud</h3>
+                <form id="SimplyWebForm" class="SimplyWebForm" name="Hjemmesideformular" action="https://homiehandvaerkerservice80.simply-crm.dk/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                    <input type="hidden" name="publicid" value="bb26e8ff3252b680d4f4c244fe4d9bf6">
+                    <input type="hidden" name="urlencodeenable" value="1">
+                    <input type="hidden" name="name" value="Hjemmesideformular">
+                    <input type="hidden" name="potentialname" value="Nyt lead" required>
+                    <input type="hidden" name="closingdate" value="2025-06-25" required>
+                    <select name="sales_stage" data-label="sales_stage" required hidden>
+                        <option value="">Vælg værdi</option>
+                        <option value="Booking" selected>Booking</option>
+                        <option value="Gennemgang">Gennemgang</option>
+                        <option value="Online gennemgang">Online gennemgang</option>
+                        <option value="Tilbud sendt/Opfølgning">Tilbud sendt/Opfølgning</option>
+                        <option value="Accepteret tilbud">Accepteret tilbud</option>
+                        <option value="Planlagt opgave">Planlagt opgave</option>
+                        <option value="Syn gennemført">Syn gennemført</option>
+                        <option value="Fakturering gennemført">Fakturering gennemført</option>
+                    </select>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="cf_fulde_navn_contact">Fulde navn</label>
+                            <input type="text" id="cf_fulde_navn_contact" name="cf_fulde_navn">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_telefonnummer_contact">Telefonnummer</label>
+                            <input type="text" id="cf_telefonnummer_contact" name="cf_telefonnummer">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_email_contact">E-mail</label>
+                            <input type="email" id="cf_email_contact" name="cf_email">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_fraflytningsdato_contact">Fraflytningsdato, såfremt relevant</label>
+                            <input type="date" id="cf_fraflytningsdato_contact" name="cf_fraflytningsdato">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_adresse_contact">Adresse (inkl. etage, hvis relevant)</label>
+                            <input type="text" id="cf_adresse_contact" name="cf_adresse">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf_postnummer_contact">Postnummer</label>
+                            <input type="number" id="cf_postnummer_contact" name="cf_postnummer">
+                        </div>
+                        <div class="form-group full">
+                            <label for="description_contact">Skriv din besked</label>
+                            <textarea id="description_contact" name="description"></textarea>
+                        </div>
+                        <div class="form-group full">
+                            <select name="leadsource" data-label="leadsource" hidden>
+                                <option value="">Vælg værdi</option>
+                                <option value="Web Site" selected>Hjemmeside</option>
+                            </select>
+                            <input type="submit" value="Submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+function toggleMenu() {
+    document.getElementById('mobileNav').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+}
+</script>
+</body>
+</html>
