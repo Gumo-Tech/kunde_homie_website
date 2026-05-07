@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homie Booking</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { background: #f5f7fb; }
+        .booking-page { padding: 48px 0 80px; }
+        .widget { max-width: 760px; margin: 0 auto; padding: 28px 24px; background: #ffffff; border-radius: 24px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08); }
+        .widget-header { margin-bottom: 22px; }
+        .widget-tag { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: #eff6ff; color: #2563eb; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+        .widget-title { margin-top: 14px; font-size: 1.85rem; line-height: 1.1; color: #111827; }
+        .widget-copy { margin-top: 12px; color: #6b7280; font-size: 1rem; line-height: 1.8; }
+        .field { margin-top: 20px; }
+        .field label { display: block; margin-bottom: 8px; color: #374151; font-size: 0.9rem; font-weight: 700; }
+        .field input { width: 100%; padding: 14px 16px; border-radius: 16px; border: 1px solid #d1d5db; font-size: 1rem; color: #111827; background: #f8fafc; }
+        .field input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12); }
+        .button-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .button-row button { background: #2563eb; color: #ffffff; border: 0; border-radius: 14px; padding: 13px 22px; font-size: 0.98rem; font-weight: 700; cursor: pointer; transition: transform 0.18s ease, background 0.18s ease; }
+        .button-row button:hover { background: #1d4ed8; transform: translateY(-1px); }
+        .status { margin-top: 20px; padding: 18px; border-radius: 18px; border: 1px solid #e5e7eb; background: #f8fafc; color: #374151; }
+        .status strong { display: block; margin-bottom: 6px; color: #111827; }
+        .slots { margin-top: 18px; display: grid; gap: 12px; }
+        .date-row { padding: 16px 16px 14px; border-radius: 18px; background: #eef2ff; border: 1px solid #dbeafe; }
+        .date-row-title { margin-bottom: 12px; font-weight: 700; color: #1d4ed8; }
+        .slot-list { display: flex; flex-wrap: wrap; gap: 10px; }
+        .slot-pill { padding: 10px 14px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; }
+        .note { margin-top: 24px; color: #6b7280; font-size: 0.94rem; line-height: 1.7; }
+        .hidden { display: none; }
+        .site-header { position: relative; }
+        .site-header + .booking-page { padding-top: 24px; }
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp"
+                 alt="Homie Håndværkerservice"
+                 onerror="this.style.display='none';document.getElementById('logo-text').style.display='flex'">
+            <span id="logo-text" class="logo-fallback" style="display:none">
+                <span class="logo-fallback-main">homie</span>
+                <span class="logo-fallback-sub">EN AF HUSET</span>
+            </span>
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <a href="index.html" class="nav-link">Forside</a>
+            <div class="nav-item has-dropdown">
+                <a href="istandsaettelse-ved-fraflytning/" class="nav-link">Ydelser<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="dropdown">
+                    <a href="istandsaettelse-ved-fraflytning/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><div class="dropdown-link-text"><strong>Istandsættelse ved fraflytning</strong><span>Få dit depositum tilbage</span></div></a>
+                    <a href="malerservice/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.5 3.5 21 6l-9.5 9.5-4 1 1-4L18.5 3.5z"/><path d="M5 20c2.5 0 4-1.5 4-4"/></svg></div><div class="dropdown-link-text"><strong>Malerservice</strong><span>Professionelle malere på Sjælland</span></div></a>
+                    <a href="gulvservice/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M7 7v10"/><path d="M14 7v10"/></svg></div><div class="dropdown-link-text"><strong>Gulvservice</strong><span>Slibning og lakering</span></div></a>
+                    <a href="renovering-erhverv/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17"/><path d="M9 8h1"/><path d="M14 8h1"/><path d="M9 12h1"/><path d="M14 12h1"/><path d="M9 21v-5h6v5"/></svg></div><div class="dropdown-link-text"><strong>Renovering Erhverv</strong><span>Til virksomheder og boligselskaber</span></div></a>
+                </div>
+            </div>
+            <div class="nav-item has-dropdown">
+                <a href="om-os/" class="nav-link">Om os<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
+                <div class="dropdown">
+                    <a href="om-os/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg></div><div class="dropdown-link-text"><strong>Om Homie</strong><span>Vores historie og team</span></div></a>
+                    <a href="om-os/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></svg></div><div class="dropdown-link-text"><strong>Vores værdier</strong><span>Kommunikation, budget og punktlighed</span></div></a>
+                </div>
+            </div>
+            <a href="booking-widget.html" class="nav-link active">Booking</a>
+            <a href="kontakt/" class="nav-link">Kontakt</a>
+        </nav>
+        <div class="header-right">
+            <div class="lang-toggle">
+                <button class="lang-flag" title="English" aria-label="English">
+                    <img src="assets/en-flag.png" alt="">
+                    <span>EN</span>
+                </button>
+                <button class="lang-flag active" title="Dansk" aria-label="Dansk">
+                    <img src="assets/dk-flag.png" alt="">
+                    <span>DA</span>
+                </button>
+            </div>
+            <a href="tel:+4570404256" class="nav-phone-btn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
+                70 40 42 56
+            </a>
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <a href="index.html">Forside</a>
+        <a href="istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+        <a href="malerservice/">Malerservice</a>
+        <a href="gulvservice/">Gulvservice</a>
+        <a href="renovering-erhverv/">Renovering Erhverv</a>
+        <a href="om-os/">Om os</a>
+        <a href="booking-widget.html">Booking</a>
+        <a href="kontakt/">Kontakt</a>
+        <div class="mobile-cta">
+            <a href="tel:+4570404256" class="btn btn-primary" style="width:100%;justify-content:center;"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>70 40 42 56</a>
+        </div>
+    </nav>
+</header>
+<main class="booking-page">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Booking</div>
+            <h2>Book din besigtigelse</h2>
+            <p>Her er demo-widgeten, som kan hostes separat og eventuelt køre backend et andet sted.</p>
+        </div>
+        <div class="widget">
+            <div class="widget-header">
+                <div class="widget-tag">Embed</div>
+                <h1 class="widget-title">Booking-widget til ekstern backend</h1>
+                <p class="widget-copy">Denne widget kan hostes separat og hente data fra din backend. Her vises postnummer, ledige dage og tidsrum som et eksempel.</p>
+            </div>
+            <div class="field">
+                <label for="widget-postcode">Postnummer</label>
+                <input id="widget-postcode" type="text" inputmode="numeric" maxlength="4" placeholder="2900">
+            </div>
+            <div class="button-row">
+                <button id="widget-check">Vis ledige tider</button>
+            </div>
+            <div id="widget-status" class="status hidden"></div>
+            <div id="widget-slots" class="slots hidden"></div>
+            <p class="note">Når du har et backend-endpoint, kan du erstatte denne widget med din egen service eller pege iframe’en på en ekstern URL.</p>
+        </div>
+    </div>
+</main>
+<script>
+function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    const btn = document.getElementById('hamburger');
+    nav.classList.toggle('open');
+    btn.classList.toggle('open');
+}
+document.querySelectorAll('.mobile-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+    });
+});
+const ZONES = [
+    { name: 'København & Omegn', days: ['Tirsdag', 'Torsdag'], from: 1000, to: 2699 },
+    { name: 'Nordsjælland', days: ['Onsdag'], from: 2700, to: 3999 },
+    { name: 'Vestsjælland', days: ['Fredag'], from: 4000, to: 4999 },
+    { name: 'Sydsjælland', days: ['Mandag'], from: 5000, to: 5999 }
+];
+const TIMES = ['09:00', '11:00', '13:30', '15:30'];
+const postcodeInput = document.getElementById('widget-postcode');
+const statusEl = document.getElementById('widget-status');
+const slotsEl = document.getElementById('widget-slots');
+document.getElementById('widget-check').addEventListener('click', () => {
+    const code = postcodeInput.value.trim();
+    const zone = detectZone(code);
+    if (!zone) {
+        statusEl.className = 'status';
+        statusEl.textContent = 'Postnummeret er ikke dækket af denne demo. Backend kan returnere de rigtige zonedata.';
+        statusEl.classList.remove('hidden');
+        slotsEl.classList.add('hidden');
+        return;
+    }
+    statusEl.className = 'status';
+    statusEl.innerHTML = `<strong>${zone.name}</strong> Ledige dage: ${zone.days.join(' & ')}.`;
+    statusEl.classList.remove('hidden');
+    slotsEl.innerHTML = zone.days.map(day => `
+        <div class="date-row">
+            <div class="date-row-title">${day}</div>
+            <div class="slot-list">${TIMES.map(time => `<span class="slot-pill">${time}</span>`).join('')}</div>
+        </div>`
+    ).join('');
+    slotsEl.classList.remove('hidden');
+});
+function detectZone(postcode) {
+    const n = parseInt(postcode, 10);
+    return ZONES.find(zone => n >= zone.from && n <= zone.to) || null;
+}
+</script>
+</body>
+</html>
