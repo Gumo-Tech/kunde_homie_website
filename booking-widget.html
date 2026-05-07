@@ -24,6 +24,7 @@
         .field label { display: block; margin-bottom: 8px; color: #374151; font-size: 0.9rem; font-weight: 700; }
         .field input { width: 100%; padding: 14px 16px; border-radius: 16px; border: 1px solid #d1d5db; font-size: 1rem; color: #111827; background: #f8fafc; }
         .field input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12); }
+        .slot-pill { padding: 10px 14px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; cursor: pointer; }
         .button-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
         .button-row button { background: #2563eb; color: #ffffff; border: 0; border-radius: 14px; padding: 13px 22px; font-size: 0.98rem; font-weight: 700; cursor: pointer; transition: transform 0.18s ease, background 0.18s ease; }
         .button-row button:hover { background: #1d4ed8; transform: translateY(-1px); }
@@ -167,16 +168,34 @@ document.getElementById('widget-check').addEventListener('click', () => {
         return;
     }
     statusEl.className = 'status';
-    statusEl.innerHTML = `<strong>${zone.name}</strong> Ledige dage: ${zone.days.join(' & ')}.`;
+    statusEl.innerHTML = `<strong>${zone.name}</strong> Her er de næste 10 ledige datoer og tidspunkter.`;
     statusEl.classList.remove('hidden');
-    slotsEl.innerHTML = zone.days.map(day => `
+    const upcoming = getUpcomingDates(zone.days, 10);
+    slotsEl.innerHTML = upcoming.map(item => `
         <div class="date-row">
-            <div class="date-row-title">${day}</div>
-            <div class="slot-list">${TIMES.map(time => `<span class="slot-pill">${time}</span>`).join('')}</div>
+            <div class="date-row-title">${item.day} ${item.date}</div>
+            <div class="slot-list">${TIMES.map(time => `<button type="button" class="slot-pill">${time}</button>`).join('')}</div>
         </div>`
     ).join('');
     slotsEl.classList.remove('hidden');
 });
+function getUpcomingDates(days, count) {
+    const weekdayNames = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
+    const today = new Date();
+    const results = [];
+    let current = new Date(today);
+    while (results.length < count) {
+        const weekdayName = weekdayNames[current.getDay()];
+        if (days.includes(weekdayName)) {
+            results.push({
+                day: weekdayName,
+                date: `${String(current.getDate()).padStart(2, '0')}/${String(current.getMonth() + 1).padStart(2, '0')}`
+            });
+        }
+        current.setDate(current.getDate() + 1);
+    }
+    return results;
+}
 function detectZone(postcode) {
     const n = parseInt(postcode, 10);
     return ZONES.find(zone => n >= zone.from && n <= zone.to) || null;
