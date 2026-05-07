@@ -530,7 +530,7 @@ button { font-family: inherit; cursor: pointer; }
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
-    padding: 0 0 24px;
+    padding: 24px;
     position: relative;
     overflow: hidden;
     transition: var(--ease);
@@ -544,10 +544,10 @@ button { font-family: inherit; cursor: pointer; }
 }
 .service-card .service-icon,
 .service-card h3,
+.service-card h4,
 .service-card p,
 .service-card .service-link {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin: 0;
 }
 .service-card::after {
     content: '';
@@ -570,7 +570,8 @@ button { font-family: inherit; cursor: pointer; }
     margin-bottom: 18px;
 }
 .service-icon svg { width: 27px; height: 27px; }
-.service-card h3 { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+.service-card h3 { font-size: 0.97rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; line-height: 1.2; word-wrap: break-word; }
+.service-card h4 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin: 0 0 16px 0; line-height: 1.35; word-wrap: break-word; }
 .service-card p  { font-size: 0.83rem; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
 .service-link {
     display: inline-flex; align-items: center; gap: 5px;
