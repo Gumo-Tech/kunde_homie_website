@@ -30,11 +30,11 @@
         .button-row button:hover { background: #1d4ed8; transform: translateY(-1px); }
         .status { margin-top: 20px; padding: 18px; border-radius: 18px; border: 1px solid #e5e7eb; background: #f8fafc; color: #374151; }
         .status strong { display: block; margin-bottom: 6px; color: #111827; }
-        .slots { margin-top: 18px; display: grid; gap: 12px; }
-        .date-row { padding: 16px 16px 14px; border-radius: 18px; background: #eef2ff; border: 1px solid #dbeafe; }
-        .date-row-title { margin-bottom: 12px; font-weight: 700; color: #1d4ed8; }
-        .slot-list { display: flex; flex-wrap: wrap; gap: 10px; }
-        .slot-pill { padding: 10px 14px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; }
+        .slots { margin-top: 18px; display: grid; gap: 6px; }
+        .date-row { padding: 8px 14px; border-radius: 12px; background: #eef2ff; border: 1px solid #dbeafe; display: flex; align-items: center; gap: 12px; }
+        .date-row-title { font-weight: 700; color: #1d4ed8; font-size: 0.88rem; white-space: nowrap; min-width: 110px; }
+        .slot-list { display: flex; flex-wrap: wrap; gap: 6px; }
+        .slot-pill { padding: 5px 11px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; font-size: 0.82rem; }
         .note { margin-top: 24px; color: #6b7280; font-size: 0.94rem; line-height: 1.7; }
         .hidden { display: none; }
         .site-header { position: relative; }
@@ -147,11 +147,12 @@ document.querySelectorAll('.mobile-nav a').forEach(a => {
         document.getElementById('hamburger').classList.remove('open');
     });
 });
+const WEEKDAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
 const ZONES = [
-    { name: 'København & Omegn', days: ['Tirsdag', 'Torsdag'], from: 1000, to: 2699 },
-    { name: 'Nordsjælland', days: ['Onsdag'], from: 2700, to: 3999 },
-    { name: 'Vestsjælland', days: ['Fredag'], from: 4000, to: 4999 },
-    { name: 'Sydsjælland', days: ['Mandag'], from: 5000, to: 5999 }
+    { name: 'København & Omegn', days: WEEKDAYS, from: 1000, to: 2699 },
+    { name: 'Nordsjælland', days: WEEKDAYS, from: 2700, to: 3999 },
+    { name: 'Vestsjælland', days: WEEKDAYS, from: 4000, to: 4999 },
+    { name: 'Sydsjælland', days: WEEKDAYS, from: 5000, to: 5999 }
 ];
 const TIMES = ['09:00', '11:00', '13:30', '15:30'];
 const postcodeInput = document.getElementById('widget-postcode');
