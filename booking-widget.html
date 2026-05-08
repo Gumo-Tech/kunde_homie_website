@@ -13,32 +13,8 @@
     <title>Homie Booking</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body { background: #f5f7fb; }
-        .booking-page { padding: 48px 0 80px; }
-        .widget { max-width: 760px; margin: 0 auto; padding: 28px 24px; background: #ffffff; border-radius: 24px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08); }
-        .widget-header { margin-bottom: 22px; }
-        .widget-tag { display: inline-flex; padding: 6px 12px; border-radius: 999px; background: #eff6ff; color: #2563eb; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-        .widget-title { margin-top: 14px; font-size: 1.85rem; line-height: 1.1; color: #111827; }
-        .widget-copy { margin-top: 12px; color: #6b7280; font-size: 1rem; line-height: 1.8; }
-        .field { margin-top: 20px; }
-        .field label { display: block; margin-bottom: 8px; color: #374151; font-size: 0.9rem; font-weight: 700; }
-        .field input { width: 100%; padding: 14px 16px; border-radius: 16px; border: 1px solid #d1d5db; font-size: 1rem; color: #111827; background: #f8fafc; }
-        .field input:focus { outline: none; border-color: #2563eb; box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12); }
-        .slot-pill { padding: 10px 14px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; cursor: pointer; }
-        .button-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
-        .button-row button { background: #2563eb; color: #ffffff; border: 0; border-radius: 14px; padding: 13px 22px; font-size: 0.98rem; font-weight: 700; cursor: pointer; transition: transform 0.18s ease, background 0.18s ease; }
-        .button-row button:hover { background: #1d4ed8; transform: translateY(-1px); }
-        .status { margin-top: 20px; padding: 18px; border-radius: 18px; border: 1px solid #e5e7eb; background: #f8fafc; color: #374151; }
-        .status strong { display: block; margin-bottom: 6px; color: #111827; }
-        .slots { margin-top: 18px; display: grid; gap: 6px; }
-        .date-row { padding: 8px 14px; border-radius: 12px; background: #eef2ff; border: 1px solid #dbeafe; display: flex; align-items: center; gap: 12px; }
-        .date-row-title { font-weight: 700; color: #1d4ed8; font-size: 0.88rem; white-space: nowrap; min-width: 110px; }
-        .slot-list { display: flex; flex-wrap: wrap; gap: 6px; }
-        .slot-pill { padding: 5px 11px; border-radius: 999px; background: #e6fffa; color: #065f46; font-weight: 700; border: 1px solid #6ee7b7; font-size: 0.82rem; }
-        .note { margin-top: 24px; color: #6b7280; font-size: 0.94rem; line-height: 1.7; }
-        .hidden { display: none; }
-        .site-header { position: relative; }
-        .site-header + .booking-page { padding-top: 24px; }
+        .booking-iframe-wrap { width: 100%; height: calc(100vh - 72px); }
+        .booking-iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
     </style>
 </head>
 <body>
@@ -108,99 +84,22 @@
         </div>
     </nav>
 </header>
-<main class="booking-page">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-tag">Booking</div>
-            <h2>Book din besigtigelse</h2>
-            <p>Her er demo-widgeten, som kan hostes separat og eventuelt køre backend et andet sted.</p>
-        </div>
-        <div class="widget">
-            <div class="widget-header">
-                <div class="widget-tag">Embed</div>
-                <h1 class="widget-title">Booking-widget til ekstern backend</h1>
-                <p class="widget-copy">Denne widget kan hostes separat og hente data fra din backend. Her vises postnummer, ledige dage og tidsrum som et eksempel.</p>
-            </div>
-            <div class="field">
-                <label for="widget-postcode">Postnummer</label>
-                <input id="widget-postcode" type="text" inputmode="numeric" maxlength="4" placeholder="2900">
-            </div>
-            <div class="button-row">
-                <button id="widget-check">Vis ledige tider</button>
-            </div>
-            <div id="widget-status" class="status hidden"></div>
-            <div id="widget-slots" class="slots hidden"></div>
-            <p class="note">Når du har et backend-endpoint, kan du erstatte denne widget med din egen service eller pege iframe’en på en ekstern URL.</p>
-        </div>
-    </div>
-</main>
+<div class="booking-iframe-wrap">
+    <iframe src="https://homievercelbooking.vercel.app/" title="Homie Booking" allowfullscreen></iframe>
+</div>
 <script>
 function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    const btn = document.getElementById('hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
+    const nav = document.getElementById(‘mobileNav’);
+    const btn = document.getElementById(‘hamburger’);
+    nav.classList.toggle(‘open’);
+    btn.classList.toggle(‘open’);
 }
-document.querySelectorAll('.mobile-nav a').forEach(a => {
-    a.addEventListener('click', () => {
-        document.getElementById('mobileNav').classList.remove('open');
-        document.getElementById('hamburger').classList.remove('open');
+document.querySelectorAll(‘.mobile-nav a’).forEach(a => {
+    a.addEventListener(‘click’, () => {
+        document.getElementById(‘mobileNav’).classList.remove(‘open’);
+        document.getElementById(‘hamburger’).classList.remove(‘open’);
     });
 });
-const WEEKDAYS = ['Mandag','Tirsdag','Onsdag','Torsdag','Fredag'];
-const ZONES = [
-    { name: 'København & Omegn', days: WEEKDAYS, from: 1000, to: 2699 },
-    { name: 'Nordsjælland', days: WEEKDAYS, from: 2700, to: 3999 },
-    { name: 'Vestsjælland', days: WEEKDAYS, from: 4000, to: 4999 },
-    { name: 'Sydsjælland', days: WEEKDAYS, from: 5000, to: 5999 }
-];
-const TIMES = ['09:00', '11:00', '13:30', '15:30'];
-const postcodeInput = document.getElementById('widget-postcode');
-const statusEl = document.getElementById('widget-status');
-const slotsEl = document.getElementById('widget-slots');
-document.getElementById('widget-check').addEventListener('click', () => {
-    const code = postcodeInput.value.trim();
-    const zone = detectZone(code);
-    if (!zone) {
-        statusEl.className = 'status';
-        statusEl.textContent = 'Postnummeret er ikke dækket af denne demo. Backend kan returnere de rigtige zonedata.';
-        statusEl.classList.remove('hidden');
-        slotsEl.classList.add('hidden');
-        return;
-    }
-    statusEl.className = 'status';
-    statusEl.innerHTML = `<strong>${zone.name}</strong> Her er de næste 10 ledige datoer og tidspunkter.`;
-    statusEl.classList.remove('hidden');
-    const upcoming = getUpcomingDates(zone.days, 10);
-    slotsEl.innerHTML = upcoming.map(item => `
-        <div class="date-row">
-            <div class="date-row-title">${item.day} ${item.date}</div>
-            <div class="slot-list">${TIMES.map(time => `<button type="button" class="slot-pill">${time}</button>`).join('')}</div>
-        </div>`
-    ).join('');
-    slotsEl.classList.remove('hidden');
-});
-function getUpcomingDates(days, count) {
-    const weekdayNames = ['Søndag','Mandag','Tirsdag','Onsdag','Torsdag','Fredag','Lørdag'];
-    const today = new Date();
-    const results = [];
-    let current = new Date(today);
-    while (results.length < count) {
-        const weekdayName = weekdayNames[current.getDay()];
-        if (days.includes(weekdayName)) {
-            results.push({
-                day: weekdayName,
-                date: `${String(current.getDate()).padStart(2, '0')}/${String(current.getMonth() + 1).padStart(2, '0')}`
-            });
-        }
-        current.setDate(current.getDate() + 1);
-    }
-    return results;
-}
-function detectZone(postcode) {
-    const n = parseInt(postcode, 10);
-    return ZONES.find(zone => n >= zone.from && n <= zone.to) || null;
-}
 </script>
 </body>
 </html>

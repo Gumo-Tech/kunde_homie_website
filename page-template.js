@@ -17,12 +17,14 @@
     ["Forside", root + "index.html"],
     ["Ydelser", root + "istandsaettelse-ved-fraflytning/"],
     ["Om os", root + "om-os/"],
+    ["Booking", root + "booking-widget.html"],
     ["Kontakt", root + "kontakt/"]
   ];
   const enLinks = [
     ["Home", root + "en/"],
     ["Services", root + "en/refurbishment/"],
     ["About us", root + "en/about-us/"],
+    ["Booking", root + "booking-widget.html"],
     ["Contact", root + "en/contact/"]
   ];
   const navLinks = page.lang === "en" ? enLinks : daLinks;
