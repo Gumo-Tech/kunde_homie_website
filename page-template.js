@@ -16,6 +16,7 @@
   const daLinks = [
     ["Forside", root + "index.html"],
     ["Ydelser", root + "istandsaettelse-ved-fraflytning/"],
+    ["Sildeben", root + "sildeben/"],
     ["Om os", root + "om-os/"],
     ["Booking", root + "booking-widget.html"],
     ["Kontakt", root + "kontakt/"]
@@ -43,6 +44,7 @@
         ["Malerservice", root + "malerservice/"],
         ["Gulvservice", root + "gulvservice/"],
         ["Renovering Erhverv", root + "renovering-erhverv/"],
+        ["Nordisk Sildeben", root + "sildeben/"],
         ["FAQ", root + "faq/"]
       ];
 
