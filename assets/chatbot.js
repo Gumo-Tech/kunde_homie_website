@@ -1,6 +1,13 @@
 (function () {
   var WORKER_URL = 'https://homie-chatbot.gustavboye1994.workers.dev/chat';
 
+  // Resolve the booking page relative to wherever this script itself was
+  // loaded from, so the link works regardless of subfolder depth or domain
+  // (GitHub Pages project subpath today, homie.nu root later).
+  var scriptEl = document.currentScript;
+  var SITE_ROOT = scriptEl ? scriptEl.src.replace(/assets\/chatbot\.js.*$/, '') : './';
+  var BOOKING_URL = SITE_ROOT + 'booking-widget.html';
+
   var style = document.createElement('style');
   style.textContent = [
     '.hc-bubble{position:fixed;right:22px;bottom:22px;z-index:400;background:var(--blue,#2563EB);color:#fff;border:none;border-radius:999px;padding:0 20px;height:54px;display:flex;align-items:center;gap:9px;font-family:inherit;font-size:0.9rem;font-weight:700;cursor:pointer;box-shadow:0 12px 30px rgba(37,99,235,0.4);transition:transform 0.18s;}',
@@ -22,6 +29,8 @@
     '.hc-input{flex:1;border:1px solid var(--border,#E2E8F0);border-radius:10px;padding:9px 12px;font-size:0.85rem;font-family:inherit;resize:none;height:38px;}',
     '.hc-send{background:var(--blue,#2563EB);color:#fff;border:none;border-radius:10px;width:38px;height:38px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;}',
     '.hc-send:disabled{opacity:0.5;cursor:default;}',
+    '.hc-link-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;background:var(--navy,#1B2B3A);color:#fff;border-radius:10px;padding:9px 14px;font-size:0.83rem;font-weight:700;text-decoration:none;}',
+    '.hc-link-btn:hover{opacity:0.9;}',
     '@media (max-width:480px){.hc-bubble{right:14px;bottom:14px;padding:0 16px;height:48px;font-size:0.82rem;}.hc-panel{right:14px;left:14px;width:auto;bottom:76px;}}'
   ].join('');
   document.head.appendChild(style);
@@ -61,6 +70,16 @@
     msgsEl.appendChild(el);
     msgsEl.scrollTop = msgsEl.scrollHeight;
     return el;
+  }
+
+  function addLinkMsg(url, label) {
+    var a = document.createElement('a');
+    a.className = 'hc-link-btn';
+    a.href = url;
+    a.textContent = label;
+    msgsEl.appendChild(a);
+    msgsEl.scrollTop = msgsEl.scrollHeight;
+    return a;
   }
 
   function openPanel() {
@@ -104,6 +123,9 @@
         var reply = data.reply || 'Beklager, noget gik galt. Ring på 70 40 42 56.';
         addMsg('bot', reply);
         history.push({ role: 'assistant', content: reply });
+        if (data.action === 'booking') {
+          addLinkMsg(BOOKING_URL, 'Gå til booking →');
+        }
       })
       .catch(function () {
         typingEl.remove();
