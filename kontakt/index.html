@@ -10,7 +10,7 @@
     
     <link rel="icon" href="/favicon.webp" type="image/webp">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontakt Homie Håndværkerservice - ring, skriv eller udfyld formularen for et gratis, uforpligtende tilbud på istandsættelse og renovering.">
+    <meta name="description" content="Kontakt Homie Håndværkerservice - chat med vores chatbot, ring eller skriv for en gratis, uforpligtende gennemgang af din bolig.">
     <title>Kontakt os - Homie Håndværkerservice</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -98,7 +98,7 @@
         <div class="container contact-landing-inner">
             <div class="contact-landing-copy">
                 <h1>Kontakt os</h1>
-                <p>Vil du gerne i kontakt med os? Anvend formularen eller giv os et kald.</p>
+                <p>Vil du gerne i kontakt med os? Spørg vores chatbot, skriv en mail eller giv os et kald.</p>
                 <p>Vi er altid klar på telefonen og mailbakken.</p>
                 <div class="contact-landing-actions">
                     <a href="tel:+4570404256" class="btn btn-primary btn-lg">
@@ -106,7 +106,7 @@
                         70 40 42 56
                     </a>
                     <a href="#kontaktformular" class="btn btn-white btn-lg">
-                        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                         Kontakt os
                     </a>
                 </div>
@@ -144,77 +144,56 @@
                 </div>
             </aside>
 
-            <div class="contact-form-card contact-landing-form">
-                <h3>Få et uforpligtende tilbud</h3>
-                <div class="SimplyWebForm">
-                    <form id="SimplyWebForm" name="Hjemmesideformular" action="https://homiehandvaerkerservice80.simply-crm.dk/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-                        <input type="hidden" name="publicid" value="bb26e8ff3252b680d4f4c244fe4d9bf6">
-                        <input type="hidden" name="urlencodeenable" value="1">
-                        <input type="hidden" name="name" value="Hjemmesideformular">
-                        <input type="hidden" name="potentialname" value="Nyt lead" required>
-                        <input type="hidden" name="closingdate" value="2025-06-25" required>
-                        <select name="sales_stage" data-label="sales_stage" required hidden>
-                            <option value="">Vælg værdi</option>
-                            <option value="Booking" selected>Booking</option>
-                            <option value="Gennemgang">Gennemgang</option>
-                            <option value="Online gennemgang">Online gennemgang</option>
-                            <option value="Tilbud sendt/Opfølgning">Tilbud sendt/Opfølgning</option>
-                            <option value="Accepteret tilbud">Accepteret tilbud</option>
-                            <option value="Planlagt opgave">Planlagt opgave</option>
-                            <option value="Syn gennemført">Syn gennemført</option>
-                            <option value="Fakturering gennemført">Fakturering gennemført</option>
-                        </select>
-                        <table>
-                            <tr><td>
-                                <label for="cf_fulde_navn_contact">Fulde navn</label>
-                                <input type="text" id="cf_fulde_navn_contact" name="cf_fulde_navn" placeholder="Dit fulde navn">
-                            </td></tr>
-                            <tr><td>
-                                <label for="cf_telefonnummer_contact">Telefonnummer</label>
-                                <input type="text" id="cf_telefonnummer_contact" name="cf_telefonnummer" placeholder="Dit telefonnummer">
-                            </td></tr>
-                            <tr><td>
-                                <label for="cf_email_contact">E-mail</label>
-                                <input type="email" id="cf_email_contact" name="cf_email" placeholder="Din e-mailadresse">
-                            </td></tr>
-                            <tr><td>
-                                <label for="cf_fraflytningsdato_contact">Fraflytningsdato, såfremt relevant</label>
-                                <input type="date" id="cf_fraflytningsdato_contact" name="cf_fraflytningsdato">
-                            </td></tr>
-                            <tr><td>
-                                <label for="cf_adresse_contact">Adresse (inkl. etage, hvis relevant)</label>
-                                <input type="text" id="cf_adresse_contact" name="cf_adresse" placeholder="Gade, husnummer og etage">
-                            </td></tr>
-                            <tr><td>
-                                <label for="cf_postnummer_contact">Postnummer</label>
-                                <input type="number" id="cf_postnummer_contact" name="cf_postnummer" placeholder="Postnummer">
-                            </td></tr>
-                            <tr><td>
-                                <label for="description_contact">Skriv din besked</label>
-                                <textarea id="description_contact" name="description" placeholder="Beskriv kort hvad der skal laves…"></textarea>
-                            </td></tr>
-                            <tr><td>
-                                <select name="leadsource" data-label="leadsource" hidden>
-                                    <option value="">Vælg værdi</option>
-                                    <option value="Web Site" selected>Hjemmeside</option>
-                                </select>
-                            </td></tr>
-                            <tr><td>
-                                <input type="submit" value="Send forespørgsel">
-                            </td></tr>
-                        </table>
-                    </form>
+            <div class="contact-help-stack">
+                <div class="contact-form-card contact-chat-card">
+                    <div class="contact-chat-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Chat med "Spørg en Homie"</h3>
+                    <p>Vores chatbot i hjørnet af skærmen svarer med det samme på de fleste spørgsmål om ydelser, priser og processen. Prøv den, før du ringer eller skriver — den er ofte hurtigst.</p>
+                    <button type="button" class="btn btn-primary" id="openChatBtn">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        Åbn chatten
+                    </button>
+                    <p class="contact-chat-fallback">Får du ikke svar der, eller foretrækker du det direkte? Skriv til <a href="mailto:kontakt@homie.nu">kontakt@homie.nu</a> eller ring på <a href="tel:+4570404256">70 40 42 56</a>.</p>
+                </div>
+
+                <div class="contact-form-card contact-process-card">
+                    <h3>Sådan foregår det normalt</h3>
+                    <ol class="contact-process-steps">
+                        <li>
+                            <span class="contact-process-num">1</span>
+                            <div><strong>Book en gratis, uforpligtende gennemgang</strong><span>Vi finder en tid, hvor vi kommer forbi og ser lejligheden.</span></div>
+                        </li>
+                        <li>
+                            <span class="contact-process-num">2</span>
+                            <div><strong>Vi gennemgår boligen sammen</strong><span>Ud fra det, vi ser, laver vi en plan og et tilbud, der passer til opgaven.</span></div>
+                        </li>
+                        <li>
+                            <span class="contact-process-num">3</span>
+                            <div><strong>Vi tager den derfra</strong><span>Accepterer du tilbuddet, aftaler vi tidspunkt for arbejdet og går i gang.</span></div>
+                        </li>
+                    </ol>
+                    <a href="../booking-widget.html" class="btn btn-primary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z"/></svg>
+                        Book en gratis gennemgang
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
+<script src="../assets/chatbot.js" defer></script>
 <script>
 function toggleMenu() {
     document.getElementById('mobileNav').classList.toggle('open');
     document.getElementById('hamburger').classList.toggle('open');
 }
+document.getElementById('openChatBtn').addEventListener('click', function () {
+    var bubble = document.querySelector('.hc-bubble');
+    if (bubble) bubble.click();
+});
 </script>
 </body>
 </html>
