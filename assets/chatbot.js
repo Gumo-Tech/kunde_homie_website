@@ -31,6 +31,7 @@
     '.hc-send:disabled{opacity:0.5;cursor:default;}',
     '.hc-link-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;background:var(--navy,#1B2B3A);color:#fff;border-radius:10px;padding:9px 14px;font-size:0.83rem;font-weight:700;text-decoration:none;}',
     '.hc-link-btn:hover{opacity:0.9;}',
+    '.hc-link-btn.hc-stale{opacity:0.4;pointer-events:none;text-decoration:line-through;}',
     '@media (max-width:480px){.hc-bubble{right:14px;bottom:14px;padding:0 16px;height:48px;font-size:0.82rem;}.hc-panel{right:14px;left:14px;width:auto;bottom:76px;}}'
   ].join('');
   document.head.appendChild(style);
@@ -129,6 +130,12 @@
             // told so the customer doesn't type any of it twice. It goes after the
             // "#" on purpose: a fragment survives the redirects some hosts do to
             // tidy URLs, and is never sent to a server the way a query is.
+            // Retire the previous buttons first: after someone narrows their hours,
+            // an older button would still book the wider window they just took back.
+            Array.prototype.forEach.call(msgsEl.querySelectorAll('.hc-link-btn'), function (old) {
+              old.classList.add('hc-stale');
+              old.removeAttribute('href');
+            });
             data.suggestedSlots.forEach(function (slot) {
               var fields = { postcode: data.postcode, date: slot.date, time: slot.time };
               if (slot.flexFrom && slot.flexTo) {
