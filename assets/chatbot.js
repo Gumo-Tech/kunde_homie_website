@@ -131,13 +131,18 @@
             // tidy URLs, and is never sent to a server the way a query is.
             data.suggestedSlots.forEach(function (slot) {
               var fields = { postcode: data.postcode, date: slot.date, time: slot.time };
+              if (slot.flexFrom && slot.flexTo) {
+                fields.flexFrom = slot.flexFrom;
+                fields.flexTo = slot.flexTo;
+              }
               Object.keys(data.prefill || {}).forEach(function (key) {
                 if (data.prefill[key]) fields[key] = data.prefill[key];
               });
               var fragment = Object.keys(fields).map(function (key) {
                 return key + '=' + encodeURIComponent(fields[key]);
               }).join('&');
-              addLinkMsg(BOOKING_URL + '#' + fragment, 'Book ' + slot.day + ' d. ' + slot.date + ' kl. ' + slot.time + ' →');
+              var label = slot.label || ('Book ' + slot.day + ' d. ' + slot.date + ' kl. ' + slot.time + ' →');
+              addLinkMsg(BOOKING_URL + '#' + fragment, label);
             });
           } else {
             addLinkMsg(BOOKING_URL, 'Gå til booking →');
