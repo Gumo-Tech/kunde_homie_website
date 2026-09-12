@@ -90,12 +90,14 @@
     <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Homie Booking" allowfullscreen></iframe>
 </div>
 <script>
-// Carries a chatbot deep link (postcode + a time it already found) through to
-// the booking page inside the iframe, so the customer doesn't retype either.
+// Carries what the chatbot already knows (postcode, time, contact details) through
+// to the booking page inside the iframe. It arrives after a "#" because hosts that
+// tidy URLs drop the query string on the redirect, and a fragment also never
+// travels to a server.
 (function () {
-    var query = window.location.search;
-    if (query) {
-        document.getElementById('booking-iframe').src = 'https://homie-booking.gustavboye1994.workers.dev/' + query;
+    var data = window.location.hash ? window.location.hash.slice(1) : window.location.search.slice(1);
+    if (data) {
+        document.getElementById('booking-iframe').src = 'https://homie-booking.gustavboye1994.workers.dev/?' + data;
     }
 })();
 function toggleMenu() {

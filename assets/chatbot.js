@@ -125,13 +125,19 @@
         history.push({ role: 'assistant', content: reply });
         if (data.action === 'booking') {
           if (Array.isArray(data.suggestedSlots) && data.suggestedSlots.length && data.postcode) {
-            // One button per time the bot found — each opens the booking page with
-            // that postcode and time already filled in, so nothing has to be retyped.
+            // One button per time the bot found, carrying everything it has been
+            // told so the customer doesn't type any of it twice. It goes after the
+            // "#" on purpose: a fragment survives the redirects some hosts do to
+            // tidy URLs, and is never sent to a server the way a query is.
             data.suggestedSlots.forEach(function (slot) {
-              var params = '?postcode=' + encodeURIComponent(data.postcode)
-                + '&date=' + encodeURIComponent(slot.date)
-                + '&time=' + encodeURIComponent(slot.time);
-              addLinkMsg(BOOKING_URL + params, 'Book ' + slot.day + ' d. ' + slot.date + ' kl. ' + slot.time + ' →');
+              var fields = { postcode: data.postcode, date: slot.date, time: slot.time };
+              Object.keys(data.prefill || {}).forEach(function (key) {
+                if (data.prefill[key]) fields[key] = data.prefill[key];
+              });
+              var fragment = Object.keys(fields).map(function (key) {
+                return key + '=' + encodeURIComponent(fields[key]);
+              }).join('&');
+              addLinkMsg(BOOKING_URL + '#' + fragment, 'Book ' + slot.day + ' d. ' + slot.date + ' kl. ' + slot.time + ' →');
             });
           } else {
             addLinkMsg(BOOKING_URL, 'Gå til booking →');
