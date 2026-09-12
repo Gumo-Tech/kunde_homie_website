@@ -124,7 +124,18 @@
         addMsg('bot', reply);
         history.push({ role: 'assistant', content: reply });
         if (data.action === 'booking') {
-          addLinkMsg(BOOKING_URL, 'Gå til booking →');
+          if (Array.isArray(data.suggestedSlots) && data.suggestedSlots.length && data.postcode) {
+            // One button per time the bot found — each opens the booking page with
+            // that postcode and time already filled in, so nothing has to be retyped.
+            data.suggestedSlots.forEach(function (slot) {
+              var params = '?postcode=' + encodeURIComponent(data.postcode)
+                + '&date=' + encodeURIComponent(slot.date)
+                + '&time=' + encodeURIComponent(slot.time);
+              addLinkMsg(BOOKING_URL + params, 'Book ' + slot.day + ' d. ' + slot.date + ' kl. ' + slot.time + ' →');
+            });
+          } else {
+            addLinkMsg(BOOKING_URL, 'Gå til booking →');
+          }
         }
       })
       .catch(function () {

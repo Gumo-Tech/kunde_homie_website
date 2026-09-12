@@ -87,9 +87,17 @@
     </nav>
 </header>
 <div class="booking-iframe-wrap">
-    <iframe src="https://homie-booking.gustavboye1994.workers.dev/" title="Homie Booking" allowfullscreen></iframe>
+    <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Homie Booking" allowfullscreen></iframe>
 </div>
 <script>
+// Carries a chatbot deep link (postcode + a time it already found) through to
+// the booking page inside the iframe, so the customer doesn't retype either.
+(function () {
+    var query = window.location.search;
+    if (query) {
+        document.getElementById('booking-iframe').src = 'https://homie-booking.gustavboye1994.workers.dev/' + query;
+    }
+})();
 function toggleMenu() {
     const nav = document.getElementById('mobileNav');
     const btn = document.getElementById('hamburger');
