@@ -48,68 +48,9 @@
         ["FAQ", root + "faq/"]
       ];
 
-  const crmForm = `
-    <section class="contact-form-card sitemap-contact-form">
-      <h3>${page.lang === "en" ? "Get a free quote" : "Få et gratis, uforpligtende tilbud"}</h3>
-      <p>${page.lang === "en" ? "Fill in the form and we will get back to you as soon as possible." : "Udfyld formularen nedenfor, og vi vender tilbage hurtigst muligt."}</p>
-      <form id="SimplyWebForm" class="SimplyWebForm" name="Hjemmesideformular" action="https://homiehandvaerkerservice80.simply-crm.dk/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-        <input type="hidden" name="publicid" value="bb26e8ff3252b680d4f4c244fe4d9bf6">
-        <input type="hidden" name="urlencodeenable" value="1">
-        <input type="hidden" name="name" value="Hjemmesideformular">
-        <input type="hidden" name="potentialname" value="Nyt lead" required>
-        <input type="hidden" name="closingdate" value="2025-06-25" required>
-        <select name="sales_stage" data-label="sales_stage" required hidden>
-          <option value="">Vælg værdi</option>
-          <option value="Booking" selected>Booking</option>
-          <option value="Gennemgang">Gennemgang</option>
-          <option value="Online gennemgang">Online gennemgang</option>
-          <option value="Tilbud sendt/Opfølgning">Tilbud sendt/Opfølgning</option>
-          <option value="Accepteret tilbud">Accepteret tilbud</option>
-          <option value="Planlagt opgave">Planlagt opgave</option>
-          <option value="Syn gennemført">Syn gennemført</option>
-          <option value="Fakturering gennemført">Fakturering gennemført</option>
-        </select>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="cf_fulde_navn_page">${page.lang === "en" ? "Full name" : "Fulde navn"}</label>
-            <input type="text" id="cf_fulde_navn_page" name="cf_fulde_navn">
-          </div>
-          <div class="form-group">
-            <label for="cf_telefonnummer_page">${page.lang === "en" ? "Phone number" : "Telefonnummer"}</label>
-            <input type="text" id="cf_telefonnummer_page" name="cf_telefonnummer">
-          </div>
-          <div class="form-group">
-            <label for="cf_email_page">E-mail</label>
-            <input type="email" id="cf_email_page" name="cf_email">
-          </div>
-          <div class="form-group">
-            <label for="cf_fraflytningsdato_page">${page.lang === "en" ? "Move-out date, if relevant" : "Fraflytningsdato, såfremt relevant"}</label>
-            <input type="date" id="cf_fraflytningsdato_page" name="cf_fraflytningsdato">
-          </div>
-          <div class="form-group">
-            <label for="cf_adresse_page">${page.lang === "en" ? "Address, including floor if relevant" : "Adresse (inkl. etage, hvis relevant)"}</label>
-            <input type="text" id="cf_adresse_page" name="cf_adresse">
-          </div>
-          <div class="form-group">
-            <label for="cf_postnummer_page">${page.lang === "en" ? "Postal code" : "Postnummer"}</label>
-            <input type="number" id="cf_postnummer_page" name="cf_postnummer">
-          </div>
-          <div class="form-group full">
-            <label for="description_page">${page.lang === "en" ? "Message" : "Skriv din besked"}</label>
-            <textarea id="description_page" name="description"></textarea>
-          </div>
-          <div class="form-group full">
-            <select name="leadsource" data-label="leadsource" hidden>
-              <option value="">Vælg værdi</option>
-              <option value="Web Site" selected>Hjemmeside</option>
-            </select>
-            <input type="submit" value="${page.lang === "en" ? "Submit" : "Send forespørgsel"}">
-          </div>
-        </div>
-      </form>
-    </section>
-  `;
-  const contactMarkup = pageId === "kontakt" || pageId === "en/contact" ? crmForm : "";
+  // Contact/booking now goes through the real booking system (kontakt/ and
+  // en/contact/ are both hand-built pages, not rendered via this template),
+  // never a form that posts to a disconnected third-party CRM.
   const sectionMarkup = page.sections.map((section) => `
     <section class="copy-section">
       <h2>${section.heading}</h2>
@@ -153,7 +94,7 @@
       </section>
       <section class="section content-page">
         <div class="container content-layout">
-          <article class="content-main">${contactMarkup}${sectionMarkup}</article>
+          <article class="content-main">${sectionMarkup}</article>
           <aside class="content-sidebar">
             <h3>${page.lang === "en" ? "Services" : "Ydelser"}</h3>
             ${services.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}
