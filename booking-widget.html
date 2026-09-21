@@ -1,94 +1,136 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-        <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.webp" type="image/webp">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.webp">
-    <link rel="mask-icon" href="/favicon.webp" color="#0A6ED9">
-    <meta name="msapplication-TileImage" content="/favicon.webp">
-    <meta name="theme-color" content="#ffffff">
-    
-    <link rel="icon" href="/favicon.webp" type="image/webp">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homie Booking</title>
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .booking-iframe-wrap { width: 100%; height: calc(100vh - 72px); }
-        .booking-iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book en gratis gennemgang | Homie Håndværkerservice</title>
+<meta name="description" content="Book en gratis og uforpligtende gennemgang hos Homie. Vælg selv en ledig tid — bookingen viser kun tider, der reelt er ledige.">
+<link rel="canonical" href="https://homie.nu/booking-widget.html">
+<link rel="icon" href="favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/design-2026.css">
+<meta property="og:title" content="Book en gratis gennemgang | Homie Håndværkerservice">
+<meta property="og:description" content="Book en gratis og uforpligtende gennemgang hos Homie. Vælg selv en ledig tid.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="da_DK">
+<style>
+  .booking-page { margin-top: 24px; }
+  .booking-stage { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; margin-top: 28px; }
+  .booking-stage iframe { width: 100%; height: min(880px, 100svh - 120px); min-height: 680px; border: 0; display: block; }
+  @media (max-width: 860px) {
+    .booking-stage { border-radius: var(--radius-lg); }
+    .booking-stage iframe { height: 780px; min-height: 0; }
+  }
+</style>
 </head>
 <body>
 <header class="site-header">
-    <div class="container header-inner">
-        <a href="index.html" class="logo">
-            <img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp"
-                 alt="Homie Håndværkerservice"
-                 onerror="this.style.display='none';document.getElementById('logo-text').style.display='flex'">
-            <span id="logo-text" class="logo-fallback" style="display:none">
-                <span class="logo-fallback-main">homie</span>
-                <span class="logo-fallback-sub">EN AF HUSET</span>
-            </span>
-        </a>
-        <nav class="main-nav" id="mainNav">
-            <a href="index.html" class="nav-link">Forside</a>
-            <div class="nav-item has-dropdown">
-                <a href="istandsaettelse-ved-fraflytning/" class="nav-link">Ydelser<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
-                <div class="dropdown">
-                    <a href="istandsaettelse-ved-fraflytning/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></div><div class="dropdown-link-text"><strong>Istandsættelse ved fraflytning</strong><span>Få dit depositum tilbage</span></div></a>
-                    <a href="malerservice/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M18.5 3.5 21 6l-9.5 9.5-4 1 1-4L18.5 3.5z"/><path d="M5 20c2.5 0 4-1.5 4-4"/></svg></div><div class="dropdown-link-text"><strong>Malerservice</strong><span>Professionelle malere på Sjælland</span></div></a>
-                    <a href="gulvservice/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/><path d="M7 7v10"/><path d="M14 7v10"/></svg></div><div class="dropdown-link-text"><strong>Gulvservice</strong><span>Slibning og lakering</span></div></a>
-                    <a href="renovering-erhverv/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 21V4h14v17"/><path d="M9 8h1"/><path d="M14 8h1"/><path d="M9 12h1"/><path d="M14 12h1"/><path d="M9 21v-5h6v5"/></svg></div><div class="dropdown-link-text"><strong>Renovering Erhverv</strong><span>Til virksomheder og boligselskaber</span></div></a>
-                </div>
-            </div>
-            <a href="sildeben/" class="nav-link">Sildeben</a>
-            <div class="nav-item has-dropdown">
-                <a href="om-os/" class="nav-link">Om os<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></a>
-                <div class="dropdown">
-                    <a href="om-os/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.8"/><path d="M16 3.2a4 4 0 0 1 0 7.6"/></svg></div><div class="dropdown-link-text"><strong>Om Homie</strong><span>Vores historie og team</span></div></a>
-                    <a href="om-os/" class="dropdown-link"><div class="dropdown-link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m20 6-11 11-5-5"/></svg></div><div class="dropdown-link-text"><strong>Vores værdier</strong><span>Kommunikation, budget og punktlighed</span></div></a>
-                </div>
-            </div>
-            <a href="booking-widget.html" class="nav-link active">Booking</a>
-            <a href="kontakt/" class="nav-link">Kontakt</a>
-        </nav>
-        <div class="header-right">
-            <div class="lang-toggle">
-                <a class="lang-flag" href="en/" aria-label="English">
-                    <img src="assets/en-flag.png" alt="">
-                    <span>EN</span>
-                </a>
-                <a class="lang-flag active" href="./" aria-label="Dansk">
-                    <img src="assets/dk-flag.png" alt="">
-                    <span>DA</span>
-                </a>
-            </div>
-            <a href="tel:+4570404256" class="nav-phone-btn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 010 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg>
-                70 40 42 56
-            </a>
-            <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+  <div class="header-inner page-gutter">
+    <a class="brand" href="./" aria-label="Homie Håndværkerservice – forside"><img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp" alt="Homie Håndværkerservice" width="160" height="40"></a>
+    <nav class="desktop-nav" aria-label="Primær navigation">
+      <div class="nav-item has-dropdown">
+        <button type="button" class="nav-link nav-trigger" aria-expanded="false">Ydelser <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+        <div class="dropdown">
+        <a href="istandsaettelse-ved-fraflytning/"><strong>Istandsættelse ved fraflytning</strong><span>Få mest muligt af dit depositum</span></a>
+        <a href="malerservice/"><strong>Malerservice</strong><span>Forarbejde, maling og kvalitetssikring</span></a>
+        <a href="gulvservice/"><strong>Gulvservice</strong><span>Slibning og efterbehandling</span></a>
+        <a href="sildeben/"><strong>Nordisk Sildeben</strong><span>Massivt sildebensparket i eg</span></a>
+        <a href="renovering-erhverv/"><strong>Renovering til erhverv</strong><span>Til virksomheder og boligselskaber</span></a>
         </div>
-    </div>
-    <nav class="mobile-nav" id="mobileNav">
-        <a href="index.html">Forside</a>
-        <a href="istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
-        <a href="malerservice/">Malerservice</a>
-        <a href="gulvservice/">Gulvservice</a>
-        <a href="renovering-erhverv/">Renovering Erhverv</a>
-        <a href="sildeben/">Sildeben</a>
-        <a href="om-os/">Om os</a>
-        <a href="booking-widget.html">Booking</a>
-        <a href="kontakt/">Kontakt</a>
-        <div class="mobile-cta">
-            <a href="tel:+4570404256" class="btn btn-primary" style="width:100%;justify-content:center;"><svg class="btn-icon" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.07 5.37 2 2 0 0 1 5.06 3h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.63 2.6a2 2 0 0 1-.45 2.11L9 10.67a16 16 0 0 0 4.33 4.33l1.24-1.24a2 2 0 0 1 2.11-.45c.83.3 1.7.51 2.6.63A2 2 0 0 1 22 16.92z"/></svg>70 40 42 56</a>
-        </div>
+      </div>
+      <a href="om-os/">Om os</a>
+      <a href="booking-widget.html">Booking</a>
+      <a href="kontakt/">Kontakt</a>
+      <a class="language-link" href="en/" lang="en">EN</a>
     </nav>
+    <div class="header-right">
+      <a class="header-cta" href="tel:+4570404256"><span aria-hidden="true">●</span> 70 40 42 56</a>
+      <details class="mobile-menu">
+        <summary aria-label="Åbn menu">Menu</summary>
+        <nav aria-label="Mobilnavigation">
+          <a href="istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a>
+          <a href="malerservice/">Malerservice</a>
+          <a href="gulvservice/">Gulvservice</a>
+          <a href="sildeben/">Nordisk Sildeben</a>
+          <a href="renovering-erhverv/">Renovering til erhverv</a>
+          <a href="om-os/">Om os</a>
+          <a href="booking-widget.html">Booking</a>
+          <a href="kontakt/">Kontakt</a>
+          <a href="faq/">FAQ</a>
+          <a href="en/" lang="en">English</a>
+          <a href="tel:+4570404256">Ring 70 40 42 56</a>
+        </nav>
+      </details>
+    </div>
+  </div>
 </header>
-<div class="booking-iframe-wrap">
-    <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Homie Booking" allowfullscreen></iframe>
-</div>
+
+<main class="content-page booking-page" lang="da">
+  <section class="page-gutter">
+    <div class="section-head" style="margin-top:0;padding-inline:0;">
+      <p class="eyebrow">Booking</p>
+      <h2>Vælg selv den tid, der passer dig.</h2>
+      <p>Bookingen viser kun tider, der reelt er ledige, så du kan booke en gratis og uforpligtende gennemgang uden at vente på et opkald. Foretrækker du at tale med os, er du altid velkommen til at ringe på <a href="tel:+4570404256" style="color:var(--blue-dark);font-weight:700;">70 40 42 56</a>.</p>
+    </div>
+    <div class="booking-stage">
+      <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Book en gratis gennemgang hos Homie" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section class="page-gutter">
+    <div class="cta-banner">
+      <div>
+        <p class="eyebrow">From Homie to Homie</p>
+        <h2>Er du i tvivl om opgaven?</h2>
+        <p>Ring til os, eller læs guiden så du er klar til gennemgangen.</p>
+      </div>
+      <div class="button-row">
+        <a class="button button-white" href="tel:+4570404256">Ring 70 40 42 56</a>
+        <a class="button button-glass" href="gennemgang/">Se guiden før mødet</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="page-gutter">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://homie.nu/wp-content/uploads/2023/10/Logo_nyt-1-300x75-1.webp" alt="Homie Håndværkerservice" width="120" height="30">
+        <p>Vi gør håndværk og fraflytning nemt at overskue.</p>
+      </div>
+      <div class="footer-col"><h5>Ydelser</h5><ul>
+        <li><a href="istandsaettelse-ved-fraflytning/">Istandsættelse ved fraflytning</a></li>
+        <li><a href="malerservice/">Malerservice</a></li>
+        <li><a href="gulvservice/">Gulvservice</a></li>
+        <li><a href="sildeben/">Nordisk Sildeben</a></li>
+        <li><a href="renovering-erhverv/">Renovering til erhverv</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Gode genveje</h5><ul>
+        <li><a href="gennemgang/">Før gennemgangen</a></li>
+        <li><a href="faq/">FAQ</a></li>
+        <li><a href="om-os/">Om os</a></li>
+        <li><a href="kontakt/">Kontakt</a></li>
+        <li><a href="privatlivspolitik/">Privatlivspolitik</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Kontakt</h5><address>
+        70 40 42 56<br><a href="mailto:kontakt@homie.nu">kontakt@homie.nu</a><br>Tuborg Parkvej 3, st. tv.<br>2900 Hellerup<br>CVR 41208546
+      </address></div>
+      <div class="footer-col"><h5>Følg projekterne</h5><ul>
+        <li><a href="https://www.instagram.com/homie_aps/">Instagram</a></li>
+        <li><a href="https://www.facebook.com/homiehaandvaerkerservice">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@homie_aps">TikTok</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Homie Håndværkerservice ApS</span>
+      <a href="en/">English version</a>
+    </div>
+  </div>
+</footer>
+
 <script>
 // Carries what the chatbot already knows (postcode, time, contact details) through
 // to the booking page inside the iframe. It arrives after a "#" because hosts that
@@ -100,21 +142,7 @@
         document.getElementById('booking-iframe').src = 'https://homie-booking.gustavboye1994.workers.dev/?' + data;
     }
 })();
-function toggleMenu() {
-    const nav = document.getElementById('mobileNav');
-    const btn = document.getElementById('hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
-}
-document.querySelectorAll('.mobile-nav a').forEach(a => {
-    a.addEventListener('click', () => {
-        document.getElementById('mobileNav').classList.remove('open');
-        document.getElementById('hamburger').classList.remove('open');
-    });
-});
 </script>
+<script src="assets/chatbot.js" defer></script>
 </body>
 </html>
-
-
-
