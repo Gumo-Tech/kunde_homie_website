@@ -1,0 +1,54 @@
+/* Nordisk Sildeben — warm wood-tone variant of the 2026 design system.
+   Loaded after design-2026.css and scoped to .sildeben-theme so the header/
+   footer keep the standard palette while the page body goes warm. */
+.sildeben-theme { background: var(--oak-light); }
+.sildeben-theme .content-hero-with-image { background: var(--oak-dark); }
+.sildeben-theme .content-facts, .sildeben-theme .num-card, .sildeben-theme .faq-item { background: #fff; }
+.sildeben-theme .split-section.on-mist { background: #efe4d2; }
+.sildeben-theme .tile.tone-mist { background: #efe4d2; }
+.sildeben-theme .tile.tone-mist p { color: #5b4a37; }
+.sildeben-theme .booking-panel { background: var(--oak-dark); }
+.sildeben-theme .eyebrow { color: var(--oak-dark); }
+.sildeben-theme .promo-split { background: #efe4d2; }
+
+.price-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding-block: 24px; }
+.price-card { }
+.price-tag { display: flex; align-items: baseline; gap: 10px; margin: 18px 0; }
+.price-tag strong { font-size: 2.6rem; font-weight: 800; }
+.price-tag span { color: var(--soft-ink); font-size: 0.9rem; }
+.price-spec { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--soft-ink); margin-bottom: 6px; }
+.price-fine { font-size: 0.8rem; color: var(--soft-ink); line-height: 1.5; margin-top: 14px; max-width: 420px; }
+.price-photo { border-radius: var(--radius-xl); overflow: hidden; }
+.price-photo img { width: 100%; height: 100%; object-fit: cover; min-height: 360px; }
+
+.include-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+.include-card { border-radius: var(--radius-lg); padding: 28px; }
+.include-card.yes { background: var(--oak); color: var(--oak-dark); }
+.include-card.no { background: #fff; border: 1px solid var(--line); }
+.include-card h4 { margin-bottom: 14px; }
+.include-card ul { display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem; }
+.include-bar { margin-top: 16px; background: var(--oak-dark); color: #fff; border-radius: var(--radius-md); padding: 20px 26px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.include-bar strong { font-size: 1.1rem; }
+.include-bar span { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+@media (max-width: 880px) { .price-hero, .include-grid { grid-template-columns: 1fr; } }
+
+.gallery-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.gallery-row img { border-radius: var(--radius-lg); width: 100%; height: 280px; object-fit: cover; }
+.gallery-caption { margin-top: 6px; font-size: 0.78rem; color: var(--soft-ink); text-align: center; }
+@media (max-width: 880px) { .gallery-row { grid-template-columns: 1fr; } }
+
+.variant-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.variant-card { border-radius: var(--radius-lg); overflow: hidden; background: #fff; border: 1px solid var(--line); }
+.variant-swatch { height: 120px; }
+.variant-card.rustik .variant-swatch { background: linear-gradient(135deg, #a9774a, #7c5330); }
+.variant-card.natur .variant-swatch { background: linear-gradient(135deg, #c6a57a, #a9834f); }
+.variant-card.select .variant-swatch { background: linear-gradient(135deg, #e3cba3, #c6a57a); }
+.variant-card .variant-body { padding: 20px; }
+.variant-card h4 { margin-bottom: 6px; }
+.variant-card p { font-size: 0.85rem; color: var(--soft-ink); line-height: 1.5; }
+@media (max-width: 880px) { .variant-grid { grid-template-columns: 1fr; } }
+
+.dim-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+.dim-pill { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-md); padding: 14px 20px; text-align: center; min-width: 100px; }
+.dim-pill strong { display: block; font-size: 1rem; }
+.dim-pill span { display: block; font-size: 0.75rem; color: var(--soft-ink); }
