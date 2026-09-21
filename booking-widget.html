@@ -16,12 +16,13 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="da_DK">
 <style>
-  .booking-page { margin-top: 24px; }
-  .booking-stage { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; margin-top: 28px; }
-  .booking-stage iframe { width: 100%; height: min(880px, 100svh - 120px); min-height: 680px; border: 0; display: block; }
+  /* Booking is the whole job of this page — the widget sits straight under
+     the header and fills the screen, as it did before the redesign. */
+  .booking-stage { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; margin-top: 24px; }
+  .booking-stage iframe { width: 100%; height: calc(100svh - 130px); min-height: 640px; border: 0; display: block; }
   @media (max-width: 860px) {
     .booking-stage { border-radius: var(--radius-lg); }
-    .booking-stage iframe { height: 780px; min-height: 0; }
+    .booking-stage iframe { height: 760px; min-height: 0; }
   }
 </style>
 </head>
@@ -69,11 +70,6 @@
 
 <main class="content-page booking-page" lang="da">
   <section class="page-gutter">
-    <div class="section-head" style="margin-top:0;padding-inline:0;">
-      <p class="eyebrow">Booking</p>
-      <h2>Vælg selv den tid, der passer dig.</h2>
-      <p>Bookingen viser kun tider, der reelt er ledige, så du kan booke en gratis og uforpligtende gennemgang uden at vente på et opkald. Foretrækker du at tale med os, er du altid velkommen til at ringe på <a href="tel:+4570404256" style="color:var(--blue-dark);font-weight:700;">70 40 42 56</a>.</p>
-    </div>
     <div class="booking-stage">
       <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Book en gratis gennemgang hos Homie" allowfullscreen></iframe>
     </div>
