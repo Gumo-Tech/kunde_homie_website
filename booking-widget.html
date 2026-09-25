@@ -16,14 +16,14 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="da_DK">
 <style>
-  /* Booking is the whole job of this page — the widget sits straight under
-     the header and fills the screen, as it did before the redesign. */
-  .booking-stage { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; margin-top: 24px; }
-  .booking-stage iframe { width: 100%; height: calc(100svh - 130px); min-height: 640px; border: 0; display: block; }
-  @media (max-width: 860px) {
-    .booking-stage { border-radius: var(--radius-lg); }
-    .booking-stage iframe { height: 760px; min-height: 0; }
-  }
+  /* The booking is part of the page: a page heading, then the booking itself
+     directly on the page — no frame, and its height follows the content
+     (assets/booking-embed.js), so there is no scroll area inside the page. */
+  .booking-hero { max-width: 760px; margin: 0 auto; padding-top: clamp(28px, 5vw, 56px); }
+  .booking-hero h1 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 760; line-height: 1.02; letter-spacing: -.05em; margin-top: 10px; }
+  .booking-hero p { margin-top: 14px; color: var(--soft-ink); font-size: 1.05rem; line-height: 1.7; }
+  .booking-stage { max-width: 760px; margin: 22px auto 0; }
+  .booking-stage iframe { width: 100%; height: 900px; border: 0; display: block; background: transparent; }
 </style>
 </head>
 <body>
@@ -70,8 +70,13 @@
 
 <main class="content-page booking-page" lang="da">
   <section class="page-gutter">
+    <div class="booking-hero">
+      <p class="eyebrow">Booking</p>
+      <h1>Book en gratis gennemgang</h1>
+      <p>Vælg hvad opgaven drejer sig om, skriv din adresse, og vælg en tid, der passer dig. Du ser kun tider, der reelt er ledige.</p>
+    </div>
     <div class="booking-stage">
-      <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Book en gratis gennemgang hos Homie" allowfullscreen></iframe>
+      <iframe id="booking-iframe" src="https://homie-booking.gustavboye1994.workers.dev/" title="Book en gratis gennemgang hos Homie" allowtransparency="true"></iframe>
     </div>
   </section>
 
